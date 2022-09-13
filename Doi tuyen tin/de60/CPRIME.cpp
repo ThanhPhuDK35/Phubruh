@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+string f[10001];
+long long a, b, i, j, s, l, r;
+
+string congxau(string a, string b)
+{
+	while(a.size()<b.size())a='0'+a;
+	while(a.size()>b.size())b='0'+b;
+	string c="";
+	long long carry = 0;
+	for(long long i=a.size()-1; i>=0; i--)
+    {
+		long long t=(a[i]-'0')+(b[i]-'0')+carry;
+		carry =t/10;
+		t=t%10;
+		c=char(t+'0')+c;
+
+	}
+	if(carry==1)
+	c='1'+c;
+	return c;
+}
+
+int main()
+{
+    //freopen("fibonaci.inp","r",stdin);
+    //freopen("fibonaci.out","w",stdout);
+    cin>>a>>b;
+    f[1]=f[2]="1";
+    i=1;
+    while(f[i]-48 <= b)
+    {
+        if(f[i]-48 >= a)
+        {
+            l=i;
+            break;
+        }
+        i++;
+    }
+    cout<<f[n];
+}
